@@ -1,0 +1,8 @@
+process	image	verified_tag_date
+Metadata/alignment filtering	python:3.11-slim	2026-10-22
+MASHTREE	staphb/mashtree:1.4.6	2026-10-22
+SKA_BUILD/SKA_ALIGN	staphb/ska2:0.5.1	2026-10-22
+SNP_DISTS	staphb/snp-dists:0.8.2	2026-10-22
+SNIPPY/SNIPPY_CORE	staphb/snippy:4.6.0	2026-10-22
+GUBBINS	staphb/gubbins:3.3.5	2026-10-22
+IQTREE3	staphb/iqtree3:3.0.1	2026-10-22

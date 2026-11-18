@@ -1,0 +1,24 @@
+{
+  "snapshot_id": "qualibact_20261030T235912Z",
+  "source": "QualiBact",
+  "retrieved_at_utc": "2026-10-30T23:59:21.189665+00:00",
+  "upstream_generated_at": "2026-10-30T11:45:19+00:00",
+  "upstream_schema_version": "1.0",
+  "files": [
+    {
+      "filename": "thresholds.csv",
+      "source_url": "https://static.qualibact.org/api/v2/thresholds.csv",
+      "sha256": "fe4375bbfebdf195af219b2ba0c855afd0436dda90752fecae63707ac20f6c23"
+    },
+    {
+      "filename": "thresholds.json",
+      "source_url": "https://static.qualibact.org/api/v2/thresholds.json",
+      "sha256": "73eef5e2ded003c670b5e3128000a1e8ad3a5e575b15f71ee6efe689912f3818"
+    },
+    {
+      "filename": "index.json",
+      "source_url": "https://static.qualibact.org/api/v2/index.json",
+      "sha256": "d4824d8e56b0eb7af1b2c1f1fad2b44b73d1cfba7bfccb11547dd863265152bb"
+    }
+  ]
+}

@@ -97,11 +97,17 @@ workflow HY_ASSEMBLY{
 
         // Collect files from SPECCHECK and give to SPECCHECK_SUMMARY
         sum_detailed = SPECCHECK.out.report.map({ meta, filepath -> filepath}).collect()
-        SPECCHECK_SUMMARY_DETAILED(sum_detailed, "hybrid")
+        //SPECCHECK_SUMMARY_DETAILED(sum_detailed, "hybrid")
 
         //to generate simple summary as well
         sum = SPECCHECK.out.report.map({ meta, filepath -> filepath}).collect()
         SPECCHECK_SUMMARY(sum, "hybrid")
     }
 
+
+    emit:
+    assemblies = UNICYCLER.out
+    species_reports = SPECIATION.out.species_report
+    quast_reports = QUAST.out.report
+    checkm_reports = CONTAMINATION_CHECKM.out
  }

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BActoalert prepared 16S FASTA samplesheet",
+  "description": "One sample per FASTA file; every contained 16S sequence is reported independently.",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "properties": {
+      "sample_id": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]*$",
+        "meta": [
+          "sample_id"
+        ],
+        "errorMessage": "sample_id must start with a letter or number and contain only letters, numbers, underscores, dots or hyphens."
+      },
+      "fasta": {
+        "type": "string",
+        "format": "file-path",
+        "exists": true,
+        "pattern": "^\\S+\\.(fa|fna|fasta)(\\.gz)?$",
+        "errorMessage": "fasta must point to an existing .fa, .fna or .fasta assembly, optionally gzip compressed, with no spaces in its path."
+      }
+    },
+    "required": [
+      "sample_id",
+      "fasta"
+    ]
+  },
+  "allOf": [
+    {
+      "uniqueEntries": [
+        "sample_id"
+      ]
+    }
+  ]
+}
+

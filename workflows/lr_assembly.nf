@@ -72,11 +72,17 @@ workflow LR_ASSEMBLY{
 
         // Collect files from SPECCHECK and give to SPECCHECK_SUMMARY
         sum_detailed = SPECCHECK_LR.out.report.map({ meta, filepath -> filepath}).collect()
-        SPECCHECK_SUMMARY_DETAILED(sum_detailed, "long")
+       // SPECCHECK_SUMMARY_DETAILED(sum_detailed, "long")
 
         //to generate simple summary as well
         sum = SPECCHECK_LR.out.report.map({ meta, filepath -> filepath}).collect()
         SPECCHECK_SUMMARY(sum, "long")
     }
+   
 
+    emit:
+    assemblies = ASSEMBLY_DRAGONFLYE.out
+    species_reports = SPECIATION.out.species_report
+    quast_reports = QUAST.out.report
+    checkm_reports = CONTAMINATION_CHECKM.out
 }

@@ -1,3 +1,4 @@
+
 //import modules for the short read only assembly workflow
 
 include { TRIMMING                       } from '../modules/short_reads_preprocess'
@@ -69,10 +70,15 @@ workflow SR_ASSEMBLY{
 
         // Collect files from SPECCHECK and give to SPECCHECK_SUMMARY
         sum_detailed = SPECCHECK.out.report.map({ meta, filepath -> filepath}).collect()
-        SPECCHECK_SUMMARY_DETAILED(sum_detailed, "short")
+       //SPECCHECK_SUMMARY_DETAILED(sum_detailed, "short")
         //to generate simple summary as well
         sum = SPECCHECK.out.report.map({ meta, filepath -> filepath}).collect()
         SPECCHECK_SUMMARY(sum, "short")
     }
-
+    
+    emit:
+    assemblies = ASSEMBLY_SHOVILL.out
+    species_reports = SPECIATION.out.species_report
+    quast_reports = QUAST.out.report
+    checkm_reports = CONTAMINATION_CHECKM.out
 }
