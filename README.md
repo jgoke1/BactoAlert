@@ -13,6 +13,15 @@ The pipeline accepts WGS reads, existing genome assemblies and prepared 16S rRNA
 
 BActoAlert is a research prototype. Analytical validation, usability assessment and evaluation of its effects on reporting turnaround remain ongoing work.
 
+## See BActoAlert in action
+
+A 30-second preview of the interactive report, showing how users explore
+quality assessments, bacterial characterisation and available comparisons.
+
+![BActoAlert interactive report demonstration](docs/images/bactoalert_demo_30s.gif)
+
+*Playback is accelerated; this is a report demonstration, not pipeline execution time.*
+
 ## Analysis routes
 
 | Input or stage | Analysis |
